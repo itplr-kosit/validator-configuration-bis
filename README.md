@@ -24,8 +24,10 @@ unzip validator.zip -d bin/
 
 ### Running the validator
 
+Verify all examples files (`test-files/3.0.9/*.xml`) and produced HTML output to directory `result-reports/` - all of them should be valid:
+
 ```
-java -jar bin/validationtool-1.4.1-java8-standalone.jar -s scenarios.xml -h CrossIndustryInvoice_100pD16B.xml
+java -jar bin/validationtool-1.4.1-java8-standalone.jar -s scenarios.xml -h -o result-reports/ test-files/good/*.xml
 ```
 
 Validator 1.4.1 help:
