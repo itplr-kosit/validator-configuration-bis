@@ -1,7 +1,10 @@
 # Validator Configuration for Peppol BIS
 
-## This is project is in beta status.
-## Use it at your own risk.
+This validator uses the latest Peppol BIS 3.0.9 rules.
+This is the Fall 2020 release hotfix from 2020-11-12.
+It is valid per November 16th, 2020.
+
+The next update is foreseen in May 2021.
 
 ## Getting started
 
