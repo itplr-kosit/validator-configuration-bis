@@ -10,7 +10,6 @@
 Required tools:
 * curl
 * unzip
-* Java 1.8 or newer
 
 As a prerequisite you need the KoSIT Validator to run it.
 
@@ -24,9 +23,12 @@ unzip validator.zip -d bin/
 
 ### Running the validator
 
+Required tools:
+* Java 1.8 or newer
+
 Verify all examples files (`test-files/3.0.9/*.xml`) and produced HTML output to directory `result-reports/` - all of them should be valid:
 
-```
+```shell
 java -jar bin/validationtool-1.4.1-java8-standalone.jar -s scenarios.xml -h -o result-reports/ test-files/good/*.xml
 ```
 
@@ -69,4 +71,13 @@ usage: check-tool  -s <scenario-config-file> [OPTIONS] [FILE]...
                                            validation requests
  -X,--debug-logging                        Enables full debug log. Alias
                                            for -l debug
+```
+
+## Building a release
+
+Required tools:
+* zip
+
+```shell
+zip -r -9 dist/validation-configuration-bis-3.0.9.zip scenarios.xml resources/*
 ```
