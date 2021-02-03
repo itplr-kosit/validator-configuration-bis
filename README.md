@@ -79,5 +79,5 @@ Required tools:
 * zip
 
 ```shell
-zip -r -9 dist/validation-configuration-bis-3.0.9.zip scenarios.xml resources/*
+zip -r -9 dist/validation-configuration-bis-3.0.9.zip README.md scenarios.xml resources/*
 ```
