@@ -1,6 +1,6 @@
 .project
 bin/
-dist/
 result-reports/
 validator.zip
+validation-configuration-bis-*.zip
 zz
