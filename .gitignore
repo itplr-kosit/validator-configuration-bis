@@ -1,5 +1,6 @@
 .project
 bin/
+dist/
 result-reports/
 validator.zip
 zz
