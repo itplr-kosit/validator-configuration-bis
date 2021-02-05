@@ -18,7 +18,7 @@
             <p>Validierung von UBL Invoice version 2.1</p>
             <p>Dieses Scenario enthält:
 - XML Schema UBL v2.1 Invoice
-- Schematron-Regeln EN16931:2017 v
+- Schematron-Regeln EN16931:2017
 - Schematron-Regeln Peppol Billing v3.0.9</p>
         </description>
         <namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</namespace>
@@ -56,7 +56,7 @@
             <p>Validierung von UBL CreditNote version 2.1</p>
             <p>Dieses Scenario enthält:
 - XML Schema UBL v2.1 CreditNote
-- Schematron-Regeln EN16931:2017 v
+- Schematron-Regeln EN16931:2017
 - Schematron-Regeln Peppol Billing v3.0.9</p>
         </description>
         <namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</namespace>
