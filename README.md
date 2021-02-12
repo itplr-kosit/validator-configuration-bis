@@ -1,10 +1,14 @@
-# Validator Configuration for Peppol BIS
+# Validator Configuration for Peppol Billing BIS 3.0
+
+This is a special configuration of the [KoSIT Validator](https://github.com/itplr-kosit/validator).
 
 This validator uses the latest Peppol BIS 3.0.9 rules.
 This is the Fall 2020 release hotfix from 2020-11-12.
 It is valid per 2020-11-16.
 
-The next update is foreseen in May 2021.
+The next Peppol update is foreseen in May 2021.
+
+If you read this on the GitHub: the primary repository is at https://projekte.kosit.org/peppol/validator-configuration-bis - raise issues there.
 
 ## Getting started
 
