@@ -4,9 +4,9 @@
     frameworkVersion="1.0.0">
     <name>Prüftool-Konfiguration Peppol BIS</name>
     <author>KoSIT</author>
-    <date>2021-02-03</date>
+    <date>2021-05-07</date>
     <description>
-        <p>Prüfung von Dokumenten auf Konformität zum Standard Peppol BIS 3.0.9</p>
+        <p>Prüfung von Dokumenten auf Konformität zum Standard Peppol BIS 3.0.10</p>
         <p>Diese Konfiguration enthält ausschließlich Peppol Rechnungs-Prüfungen und keine XRechnungs-Prüfungen</p>
     </description>
 
@@ -19,7 +19,7 @@
             <p>Dieses Scenario enthält:
 - XML Schema UBL v2.1 Invoice
 - Schematron-Regeln EN16931:2017
-- Schematron-Regeln Peppol Billing v3.0.9</p>
+- Schematron-Regeln Peppol Billing v3.0.10</p>
         </description>
         <namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</namespace>
         <namespace prefix="invoice">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2</namespace>
@@ -34,13 +34,13 @@
         <validateWithSchematron>
             <resource>
                 <name>Schematron rules for EN16931 (UBL)</name>
-                <location>resources/peppol/billing-bis/3.0.9/CEN-EN16931-UBL.xslt</location>
+                <location>resources/peppol/billing-bis/3.0.10/CEN-EN16931-UBL.xslt</location>
             </resource>
         </validateWithSchematron>
         <validateWithSchematron>
             <resource>
                 <name>Schematron rules for CreditNote - CIUS Peppol Billing BIS (UBL)</name>
-                <location>resources/peppol/billing-bis/3.0.9/PEPPOL-EN16931-UBL.xslt</location>
+                <location>resources/peppol/billing-bis/3.0.10/PEPPOL-EN16931-UBL.xslt</location>
             </resource>
         </validateWithSchematron>
         <createReport>
@@ -57,7 +57,7 @@
             <p>Dieses Scenario enthält:
 - XML Schema UBL v2.1 CreditNote
 - Schematron-Regeln EN16931:2017
-- Schematron-Regeln Peppol Billing v3.0.9</p>
+- Schematron-Regeln Peppol Billing v3.0.10</p>
         </description>
         <namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</namespace>
         <namespace prefix="creditnote">urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2</namespace>
@@ -71,13 +71,13 @@
         <validateWithSchematron>
             <resource>
                 <name>Schematron rules for EN16931 (UBL)</name>
-                <location>resources/peppol/billing-bis/3.0.9/CEN-EN16931-UBL.xslt</location>
+                <location>resources/peppol/billing-bis/3.0.10/CEN-EN16931-UBL.xslt</location>
             </resource>
         </validateWithSchematron>
         <validateWithSchematron>
             <resource>
                 <name>Schematron rules for CreditNote - CIUS Peppol Billing BIS (UBL)</name>
-                <location>resources/peppol/billing-bis/3.0.9/PEPPOL-EN16931-UBL.xslt</location>
+                <location>resources/peppol/billing-bis/3.0.10/PEPPOL-EN16931-UBL.xslt</location>
             </resource>
         </validateWithSchematron>
         <createReport>
