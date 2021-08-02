@@ -8,6 +8,8 @@ It is valid per 2021-05-17.
 
 The next Peppol update is foreseen in November 2021.
 
+**Please note: this configuration uses validation artefacts published by OpenPeppol ([OpenPeppol - GitHub](https://github.com/OpenPEPPOL)). Please use the [Peppol Service desk](https://openpeppol.atlassian.net/servicedesk/customer/portal/1) to report any issues related to the validation. KoSIT is offering this configuration of the [KoSIT Validator](https://github.com/itplr-kosit/validator), but excludes any liability.**
+
 If you read this on the GitHub: the primary repository is at https://projekte.kosit.org/peppol/validator-configuration-bis - raise issues there.
 
 ## Getting started
