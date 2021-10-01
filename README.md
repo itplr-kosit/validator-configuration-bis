@@ -24,7 +24,7 @@ As a prerequisite you need the KoSIT Validator to run it.
 
 ```shell
 # download validator
-curl -L "https://github.com/itplr-kosit/validator/releases/download/v1.4.1/validationtool-1.4.1.zip" --output validator.zip
+curl -L "https://github.com/itplr-kosit/validator/releases/download/v1.4.2/validator-1.4.2-distribution.zip" --output validator.zip
 
 # unzip the validator (ensure the target directory "bin" is empty before unzipping)
 unzip validator.zip -d bin/
@@ -38,10 +38,10 @@ Required tools:
 Verify all examples files (`test-files/good/*.xml`) and produced HTML output to directory `result-reports/` - all of them should be valid:
 
 ```shell
-java -jar bin/validationtool-1.4.1-java8-standalone.jar -s scenarios.xml -h -o result-reports/ test-files/good/*.xml
+java -jar bin/validationtool-1.4.2-java8-standalone.jar -s scenarios.xml -h -o result-reports/ test-files/good/*.xml
 ```
 
-Validator 1.4.1 help:
+Validator 1.4.2 help:
 
 ```
 usage: check-tool  -s <scenario-config-file> [OPTIONS] [FILE]...
