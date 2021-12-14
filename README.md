@@ -2,11 +2,11 @@
 
 This is a special configuration of the [KoSIT Validator](https://github.com/itplr-kosit/validator).
 
-This validator uses the latest Peppol BIS 3.0.10 rules.
-This is the "Spring 2021" release announced on 2021-05-03.
-It is valid per 2021-05-17.
+This validator uses the latest Peppol BIS 3.0.12 rules.
+This is the "November 2021" release announced on 2021-11-01.
+It is valid per 2021-11-15.
 
-The next Peppol update is foreseen in November 2021.
+The next Peppol update is foreseen in May 2022.
 
 **Please note: this configuration uses validation artefacts published by OpenPeppol ([OpenPeppol - GitHub](https://github.com/OpenPEPPOL)). Please use the [Peppol Service desk](https://openpeppol.atlassian.net/servicedesk/customer/portal/1) to report any issues related to the validation. KoSIT is offering this configuration of the [KoSIT Validator](https://github.com/itplr-kosit/validator), but excludes any liability.**
 
@@ -33,7 +33,7 @@ unzip validator.zip -d bin/
 ### Running the validator
 
 Required tools:
-* Java 1.8 or newer
+* Java 1.8 or Java 11 - Java 17 does not seem to work
 
 Verify all examples files (`test-files/good/*.xml`) and produced HTML output to directory `result-reports/` - all of them should be valid:
 
@@ -88,5 +88,5 @@ Required tools:
 * zip
 
 ```shell
-zip -r -9 validation-configuration-bis-3.0.10.zip README.md scenarios.xml resources/*
+zip -r -9 validation-configuration-bis-3.0.12.zip README.md scenarios.xml resources/*
 ```
