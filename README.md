@@ -6,7 +6,6 @@ If you think you have found a bug, please file an issue in the [Validator Config
 
 You can find packaged releases on our [GitLab project](https://projekte.kosit.org/peppol/validator-configuration-bis/-/releases).
 
-
 This validator uses the latest Peppol BIS 3.0.12 rules.
 This is the "November 2021" release announced on 2021-11-01.
 It is valid per 2021-11-15.
@@ -14,8 +13,6 @@ It is valid per 2021-11-15.
 The next Peppol update is foreseen in May 2022.
 
 **Please note: this configuration uses validation artefacts published by OpenPeppol ([OpenPeppol - GitHub](https://github.com/OpenPEPPOL)). Please use the [Peppol Service desk](https://openpeppol.atlassian.net/servicedesk/customer/portal/1) to report any issues related to the validation. KoSIT is offering this configuration of the [KoSIT Validator](https://github.com/itplr-kosit/validator), but excludes any liability.**
-
-If you read this on the GitHub: the primary repository is at https://projekte.kosit.org/peppol/validator-configuration-bis - raise issues there.
 
 ## Getting started
 
