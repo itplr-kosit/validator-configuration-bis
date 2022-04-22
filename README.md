@@ -2,9 +2,12 @@
 
 This is a special configuration of the [KoSIT Validator](https://github.com/itplr-kosit/validator).
 
-If you think you have found a bug, please file an issue in the [Validator Configuration BIS Issue Tracker](https://projekte.kosit.org/peppol/validator-configuration-bis/-/issues).
+If you think you have found a bug, please [contact us](https://www.xoev.de/peppol-21513).
 
-You can find packaged releases on our [GitLab project](https://projekte.kosit.org/peppol/validator-configuration-bis/-/releases).
+Existing issues can be found at [our issue tracker](https://projekte.kosit.org/peppol/validator-configuration-bis/-/issues).
+
+You can find packaged releases on [our GitLab project](https://projekte.kosit.org/peppol/validator-configuration-bis/-/releases).
+
 
 This validator uses the latest Peppol BIS 3.0.12 rules.
 This is the "November 2021" release announced on 2021-11-01.
