@@ -22,8 +22,7 @@
     <namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</namespace>
     <namespace prefix="invoice">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2</namespace>
 
-    <match>/invoice:Invoice[starts-with(cbc:CustomizationID,'urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0')]
-    </match>
+    <match>/invoice:Invoice[starts-with(cbc:CustomizationID,'urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0')]</match>
     <validateWithXmlSchema>
       <resource>
         <name>XML Schema for UBL 2.1 Invoice</name>
@@ -38,7 +37,7 @@
     </validateWithSchematron>
     <validateWithSchematron>
       <resource>
-        <name>Schematron rules for CreditNote - CIUS Peppol Billing BIS (UBL)</name>
+        <name>Schematron rules for Invoice - CIUS Peppol Billing BIS (UBL)</name>
         <location>resources/peppol/billing-bis/3.0.13/PEPPOL-EN16931-UBL.xslt</location>
       </resource>
     </validateWithSchematron>
@@ -49,6 +48,7 @@
       </resource>
     </createReport>
   </scenario>
+  
   <scenario>
     <name>Peppol Billing BIS 3 - UBL CreditNote</name>
     <description>

@@ -43,7 +43,7 @@ Required tools:
 Verify all examples files (`test-files/good/*.xml`) and produced HTML output to directory `result-reports/` - all of them should be valid:
 
 ```shell
-java -jar bin/validationtool-1.4.2-java8-standalone.jar -s scenarios.xml -h -o result-reports/ test-files/good/*.xml
+java -jar bin/validationtool-1.4.2-java8-standalone.jar -s scenarios.xml -h -o result-reports/ test-files/good/ubl/*.xml
 ```
 
 Validator 1.4.2 help:
