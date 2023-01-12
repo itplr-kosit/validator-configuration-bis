@@ -54,28 +54,28 @@
   </xsl:function>
   <xsl:function as="xs:boolean" name="u:checkCF">
     <xsl:param as="xs:string?" name="arg" />
-    <xsl:sequence select="   if ( (string-length($arg) = 16) or (string-length($arg) = 11) )      then    (    if ((string-length($arg) = 16))     then    (     if (u:checkCF16($arg))      then     (      true()     )     else     (      false()     )    )    else    (     if(($arg castable as xs:integer)) then true() else false()       )   )   else   (    false()   )   " />
+    <xsl:sequence select="   if ( (string-length($arg) = 16) or (string-length($arg) = 11) )   then   (    if ((string-length($arg) = 16))    then    (     if (u:checkCF16($arg))     then     (      true()     )     else     (      false()     )    )    else    (     if(($arg castable as xs:integer)) then true() else false()     )   )   else   (    false()   )   " />
   </xsl:function>
   <xsl:function as="xs:boolean" name="u:checkCF16">
     <xsl:param as="xs:string?" name="arg" />
     <xsl:variable name="allowed-characters">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz</xsl:variable>
-    <xsl:sequence select="     if (  (string-length(translate(substring($arg,1,6), $allowed-characters, '')) = 0) and         (substring($arg,7,2) castable as xs:integer) and        (string-length(translate(substring($arg,9,1), $allowed-characters, '')) = 0) and        (substring($arg,10,2) castable as xs:integer) and         (substring($arg,12,3) castable as xs:string) and        (substring($arg,15,1) castable as xs:integer) and         (string-length(translate(substring($arg,16,1), $allowed-characters, '')) = 0)      )      then true()     else false()     " />
+    <xsl:sequence select="     if (  (string-length(translate(substring($arg,1,6), $allowed-characters, '')) = 0) and       (substring($arg,7,2) castable as xs:integer) and       (string-length(translate(substring($arg,9,1), $allowed-characters, '')) = 0) and       (substring($arg,10,2) castable as xs:integer) and       (substring($arg,12,3) castable as xs:string) and       (substring($arg,15,1) castable as xs:integer) and       (string-length(translate(substring($arg,16,1), $allowed-characters, '')) = 0)      )     then true()     else false()     " />
   </xsl:function>
   <xsl:function as="xs:boolean" name="u:checkPIVAseIT">
     <xsl:param as="xs:string" name="arg" />
     <xsl:variable name="paese" select="substring($arg,1,2)" />
     <xsl:variable name="codice" select="substring($arg,3)" />
-    <xsl:sequence select="       if ( $paese = 'IT' or $paese = 'it' )    then    (     if ( ( string-length($codice) = 11 ) and ( if (u:checkPIVA($codice)!=0) then false() else true() ))     then      (      true()     )     else     (      false()     )    )    else    (     true()    )      " />
+    <xsl:sequence select="     if ( $paese = 'IT' or $paese = 'it' )    then    (     if ( ( string-length($codice) = 11 ) and ( if (u:checkPIVA($codice)!=0) then false() else true() ))     then     (      true()     )     else     (      false()     )    )    else    (     true()    )    " />
   </xsl:function>
   <xsl:function as="xs:integer" name="u:checkPIVA">
     <xsl:param as="xs:string?" name="arg" />
-    <xsl:sequence select="     if (not($arg castable as xs:integer))       then 1      else ( u:addPIVA($arg,xs:integer(0)) mod 10 )" />
+    <xsl:sequence select="     if (not($arg castable as xs:integer))      then 1      else ( u:addPIVA($arg,xs:integer(0)) mod 10 )" />
   </xsl:function>
   <xsl:function as="xs:integer" name="u:addPIVA">
     <xsl:param as="xs:string" name="arg" />
     <xsl:param as="xs:integer" name="pari" />
     <xsl:variable name="tappo" select="if (not($arg castable as xs:integer)) then 0 else 1" />
-    <xsl:variable name="mapper" select="if ($tappo = 0) then 0 else                    ( if ($pari = 1)                     then ( xs:integer(substring('0246813579', ( xs:integer(substring($arg,1,1)) +1 ) ,1)) )                     else ( xs:integer(substring($arg,1,1) ) )                   )" />
+    <xsl:variable name="mapper" select="if ($tappo = 0) then 0 else                   ( if ($pari = 1)                    then ( xs:integer(substring('0246813579', ( xs:integer(substring($arg,1,1)) +1 ) ,1)) )                    else ( xs:integer(substring($arg,1,1) ) )                   )" />
     <xsl:sequence select="if ($tappo = 0) then $mapper else ( xs:integer($mapper) + u:addPIVA(substring(xs:string($arg),2), (if($pari=0) then 1 else 0) ) )" />
   </xsl:function>
   <xsl:function as="xs:boolean" name="u:abn">
@@ -981,7 +981,7 @@
       <xsl:otherwise>
         <svrl:failed-assert test="string-length(normalize-space()) = 10 and string(number(normalize-space())) != 'NaN'">
           <xsl:attribute name="id">PEPPOL-COMMON-R049</xsl:attribute>
-          <xsl:attribute name="flag">warning</xsl:attribute>
+          <xsl:attribute name="flag">fatal</xsl:attribute>
           <xsl:attribute name="location">
             <xsl:apply-templates mode="schematron-select-full-path" select="." />
           </xsl:attribute>
@@ -1044,7 +1044,7 @@
 
 		<!--ASSERT -->
 <xsl:choose>
-      <xsl:when test="ram:SpecifiedTaxRegistration[ram:ID/@schemeID = 'VAT']/substring(ram:ID, 1, 2)='NO' and matches(ram:SpecifiedTaxRegistration[ram:ID/@schemeID = 'VAT']/substring(ram:ID,3) , '^[0-9]{9}MVA$')                  and u:mod11(substring(ram:SpecifiedTaxRegistration[ram:ID/@schemeID = 'VAT']/ram:ID, 3, 9)) or not(ram:SpecifiedTaxRegistration[ram:ID/@schemeID = 'VAT']/substring(ram:ID, 1, 2)='NO')" />
+      <xsl:when test="ram:SpecifiedTaxRegistration[ram:ID/@schemeID = 'VAT']/substring(ram:ID, 1, 2)='NO' and matches(ram:SpecifiedTaxRegistration[ram:ID/@schemeID = 'VAT']/substring(ram:ID,3) , '^[0-9]{9}MVA$')                 and u:mod11(substring(ram:SpecifiedTaxRegistration[ram:ID/@schemeID = 'VAT']/ram:ID, 3, 9)) or not(ram:SpecifiedTaxRegistration[ram:ID/@schemeID = 'VAT']/substring(ram:ID, 1, 2)='NO')" />
       <xsl:otherwise>
         <svrl:failed-assert test="ram:SpecifiedTaxRegistration[ram:ID/@schemeID = 'VAT']/substring(ram:ID, 1, 2)='NO' and matches(ram:SpecifiedTaxRegistration[ram:ID/@schemeID = 'VAT']/substring(ram:ID,3) , '^[0-9]{9}MVA$') and u:mod11(substring(ram:SpecifiedTaxRegistration[ram:ID/@schemeID = 'VAT']/ram:ID, 3, 9)) or not(ram:SpecifiedTaxRegistration[ram:ID/@schemeID = 'VAT']/substring(ram:ID, 1, 2)='NO')">
           <xsl:attribute name="id">NO-R-001</xsl:attribute>
@@ -1068,7 +1068,7 @@
   <xsl:variable name="DKCustomerCountry" select="rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:PostalTradeAddress/ram:CountryID" />
 
 	<!--RULE -->
-<xsl:template match="rsm:CrossIndustryInvoice[$DKSupplierCountry = 'DK']" mode="M24" priority="1003">
+<xsl:template match="rsm:CrossIndustryInvoice[$DKSupplierCountry = 'DK']" mode="M24" priority="1002">
     <svrl:fired-rule context="rsm:CrossIndustryInvoice[$DKSupplierCountry = 'DK']" />
 
 		<!--ASSERT -->
@@ -1096,14 +1096,14 @@
           <xsl:attribute name="location">
             <xsl:apply-templates mode="schematron-select-full-path" select="." />
           </xsl:attribute>
-          <svrl:text>When specifying non-VAT Taxes, Danish suppliers MUST use the SpecifiedTradeAllowanceCharge/ReasonCode="ZZZ" and the 4-digit Tax category MUST be specified as Reason</svrl:text>
+          <svrl:text>When specifying non-VAT Taxes for Danish customers, Danish suppliers MUST use the SpecifiedTradeAllowanceCharge/ReasonCode="ZZZ" and the 4-digit Tax category MUST be specified as Reason</svrl:text>
         </svrl:failed-assert>
       </xsl:otherwise>
     </xsl:choose>
 
 		<!--ASSERT -->
 <xsl:choose>
-      <xsl:when test="not(($DKCustomerCountry = 'DK') and                                    ( ((boolean(rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:GlobalID))                                      and (normalize-space(rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:GlobalID/@schemeID) = ''))                                    or                                     ((boolean(rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:GlobalID))                                      and (normalize-space(rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:GlobalID/@schemeID) = ''))                                   )                               )" />
+      <xsl:when test="not(($DKCustomerCountry = 'DK') and                                   ( ((boolean(rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:GlobalID))                                      and (normalize-space(rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:GlobalID/@schemeID) = ''))                                    or                                     ((boolean(rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:GlobalID))                                      and (normalize-space(rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:GlobalID/@schemeID) = ''))                                   )                               )" />
       <xsl:otherwise>
         <svrl:failed-assert test="not(($DKCustomerCountry = 'DK') and ( ((boolean(rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:GlobalID)) and (normalize-space(rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:GlobalID/@schemeID) = '')) or ((boolean(rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:GlobalID)) and (normalize-space(rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:GlobalID/@schemeID) = '')) ) )">
           <xsl:attribute name="id">DK-R-013</xsl:attribute>
@@ -1142,27 +1142,6 @@
             <xsl:apply-templates mode="schematron-select-full-path" select="." />
           </xsl:attribute>
           <svrl:text>For Danish Suppliers, a Credit note cannot have a negative total (DuePayableAmount)</svrl:text>
-        </svrl:failed-assert>
-      </xsl:otherwise>
-    </xsl:choose>
-    <xsl:apply-templates mode="M24" select="@*|*" />
-  </xsl:template>
-
-	<!--RULE -->
-<xsl:template match="rsm:CrossIndustryInvoice[$DKSupplierCountry = 'DK']/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:SpecifiedTaxRegistration" mode="M24" priority="1002">
-    <svrl:fired-rule context="rsm:CrossIndustryInvoice[$DKSupplierCountry = 'DK']/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:SpecifiedTaxRegistration" />
-
-		<!--ASSERT -->
-<xsl:choose>
-      <xsl:when test="not(( (ram:ID/@schemeID = 'VA' or ram:ID/@schemeID = 'VAT') and (substring(ram:ID/text(), 1, 2) = 'DK'))                           and not( (string-length(ram:ID/text()) = 10)                                   and (string-length(translate(substring(ram:ID/text(), 3, 8), '1234567890', '')) = 0)                                   )                               )" />
-      <xsl:otherwise>
-        <svrl:failed-assert test="not(( (ram:ID/@schemeID = 'VA' or ram:ID/@schemeID = 'VAT') and (substring(ram:ID/text(), 1, 2) = 'DK')) and not( (string-length(ram:ID/text()) = 10) and (string-length(translate(substring(ram:ID/text(), 3, 8), '1234567890', '')) = 0) ) )">
-          <xsl:attribute name="id">DK-R-015</xsl:attribute>
-          <xsl:attribute name="flag">fatal</xsl:attribute>
-          <xsl:attribute name="location">
-            <xsl:apply-templates mode="schematron-select-full-path" select="." />
-          </xsl:attribute>
-          <svrl:text>For Danish Suppliers SellerTradeParty/SpecifiedTaxRegistration/ID must be specified  with DK followed by 8 digits (eg. DK12345678) if used.</svrl:text>
         </svrl:failed-assert>
       </xsl:otherwise>
     </xsl:choose>
@@ -1286,9 +1265,9 @@
 
 		<!--ASSERT -->
 <xsl:choose>
-      <xsl:when test="not((ram:SpecifiedTradeProduct/ram:DesignatedProductClassification/ram:ClassCode/@listID = 'MP')                               and not((ram:SpecifiedTradeProduct/ram:DesignatedProductClassification/ram:ClassCode/@listVersionID = '19.05.01')                                      or (ram:SpecifiedTradeProduct/ram:DesignatedProductClassification/ram:ClassCode/@listVersionID = '19.0501')                                )                               )" />
+      <xsl:when test="not((ram:SpecifiedTradeProduct/ram:DesignatedProductClassification/ram:ClassCode/@listID = 'TST')                               and not((ram:SpecifiedTradeProduct/ram:DesignatedProductClassification/ram:ClassCode/@listVersionID = '19.05.01')                                      or (ram:SpecifiedTradeProduct/ram:DesignatedProductClassification/ram:ClassCode/@listVersionID = '19.0501')                                )                               )" />
       <xsl:otherwise>
-        <svrl:failed-assert test="not((ram:SpecifiedTradeProduct/ram:DesignatedProductClassification/ram:ClassCode/@listID = 'MP') and not((ram:SpecifiedTradeProduct/ram:DesignatedProductClassification/ram:ClassCode/@listVersionID = '19.05.01') or (ram:SpecifiedTradeProduct/ram:DesignatedProductClassification/ram:ClassCode/@listVersionID = '19.0501') ) )">
+        <svrl:failed-assert test="not((ram:SpecifiedTradeProduct/ram:DesignatedProductClassification/ram:ClassCode/@listID = 'TST') and not((ram:SpecifiedTradeProduct/ram:DesignatedProductClassification/ram:ClassCode/@listVersionID = '19.05.01') or (ram:SpecifiedTradeProduct/ram:DesignatedProductClassification/ram:ClassCode/@listVersionID = '19.0501') ) )">
           <xsl:attribute name="id">DK-R-003</xsl:attribute>
           <xsl:attribute name="flag">warning</xsl:attribute>
           <xsl:attribute name="location">
