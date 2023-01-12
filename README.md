@@ -11,7 +11,7 @@ You can find packaged releases on [our GitLab project](https://projekte.kosit.or
 
 This validator uses the latest Peppol BIS 3.0.14 rules.
 This is the "November 2022" release announced on 2022-11-03.
-It is valid per 2023-05-06 00:00 CEST.
+It is valid per 2023-02-06 00:00 CEST.
 
 The next Peppol update is foreseen in May 2023.
 
