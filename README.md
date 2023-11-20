@@ -2,7 +2,7 @@
 
 This is a special configuration of the [KoSIT Validator](https://github.com/itplr-kosit/validator).
 
-If you think you have found a bug, please [contact us](https://www.xoev.de/peppol-21513).
+If you think you have found a bug, please [contact us](https://xeinkauf.de/peppol/).
 
 Existing issues can be found at [our issue tracker](https://projekte.kosit.org/peppol/validator-configuration-bis/-/issues).
 
@@ -93,5 +93,5 @@ Required tools:
 * zip
 
 ```shell
-zip -r -9 validation-configuration-bis-3.0.14.zip README.md scenarios.xml resources/*
+zip -r -9 validation-configuration-bis-3.0.15.zip README.md scenarios.xml resources/*
 ```
