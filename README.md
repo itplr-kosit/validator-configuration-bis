@@ -2,18 +2,18 @@
 
 This is a special configuration of the [KoSIT Validator](https://github.com/itplr-kosit/validator).
 
-If you think you have found a bug, please [contact us](https://www.xoev.de/peppol-21513).
+If you think you have found a bug, please [contact us](https://xeinkauf.de/peppol/).
 
 Existing issues can be found at [our issue tracker](https://projekte.kosit.org/peppol/validator-configuration-bis/-/issues).
 
 You can find packaged releases on [our GitLab project](https://projekte.kosit.org/peppol/validator-configuration-bis/-/releases).
 
 
-This validator uses the latest Peppol BIS 3.0.14 rules.
-This is the "November 2022" release announced on 2022-11-03.
-It is valid per 2023-02-06 00:00 CEST.
+This validator uses the latest Peppol BIS 2023-05 rules.
+This is the "May 2023" release announced on 2023-05-06.
+It is valid per 2023-08-07 00:00 CEST.
 
-The next Peppol update is foreseen in May 2023.
+The next Peppol update is foreseen in November 2023.
 
 **Please note: this configuration uses validation artefacts published by OpenPeppol ([OpenPeppol - GitHub](https://github.com/OpenPEPPOL)). Please use the [Peppol Service desk](https://openpeppol.atlassian.net/servicedesk/customer/portal/1) to report any issues related to the validation. KoSIT is offering this configuration of the [KoSIT Validator](https://github.com/itplr-kosit/validator), but excludes any liability.**
 
@@ -93,5 +93,5 @@ Required tools:
 * zip
 
 ```shell
-zip -r -9 validation-configuration-bis-3.0.14.zip README.md scenarios.xml resources/*
+zip -r -9 validation-configuration-bis-3.0.15.zip README.md scenarios.xml resources/*
 ```
