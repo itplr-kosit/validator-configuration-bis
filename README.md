@@ -10,7 +10,9 @@ You can find packaged releases on [our GitLab project](https://projekte.kosit.or
 
 
 This validator uses the latest Peppol BIS 2023-11 rules.
+
 This is the "November 2023" release announced on 2023-11-28.
+
 It is valid per 2024-02-26 00:00 CEST.
 
 The next Peppol update is foreseen in May 2024.
