@@ -9,13 +9,13 @@ Existing issues can be found at [our issue tracker](https://projekte.kosit.org/p
 You can find packaged releases on [our GitLab project](https://projekte.kosit.org/peppol/validator-configuration-bis/-/releases).
 
 
-This validator uses the latest Peppol BIS 2023-11 rules.
+This validator uses the latest Peppol BIS 2024-05 rules.
 
-This is the "November 2023" release announced on 2023-11-28.
+This is the "May 2024" release announced on 2024-05-27.
 
-It is valid per 2024-02-26 00:00 CEST.
+It is valid per 2024-08-27 00:00 CEST.
 
-The next Peppol update is foreseen in May 2024.
+The next Peppol update is foreseen in November 2024.
 
 **Please note: this configuration uses validation artefacts published by OpenPeppol ([OpenPeppol - GitHub](https://github.com/OpenPEPPOL)). Please use the [Peppol Service desk](https://openpeppol.atlassian.net/servicedesk/customer/portal/1) to report any issues related to the validation. KoSIT is offering this configuration of the [KoSIT Validator](https://github.com/itplr-kosit/validator), but excludes any liability.**
 
@@ -97,5 +97,5 @@ Required tools:
 * zip
 
 ```shell
-zip -r -9 validation-configuration-bis-3.0.16.zip README.md scenarios.xml resources/*
+zip -r -9 validation-configuration-bis-3.0.17.zip README.md scenarios.xml resources/*
 ```
