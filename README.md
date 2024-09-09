@@ -31,7 +31,7 @@ As a prerequisite you need the KoSIT Validator to run it.
 
 ```shell
 # download validator
-curl -L "https://github.com/itplr-kosit/validator/releases/download/v1.4.2/validator-1.4.2-distribution.zip" --output validator.zip
+curl -L "https://github.com/itplr-kosit/validator/releases/download/v1.5.0/validator-1.5.0-distribution.zip" --output validator.zip
 
 # unzip the validator (ensure the target directory "bin" is empty before unzipping)
 unzip validator.zip -d bin/
@@ -40,55 +40,62 @@ unzip validator.zip -d bin/
 ### Running the validator
 
 Required tools:
-* Java 1.8 or Java 11 - Java 17 does not seem to work
+* Java 11+
 
 Verify all examples files (`test-files/good/*.xml`) and produced HTML output to directory `result-reports/` - all of them should be valid:
 
 ```shell
-java -jar bin/validationtool-1.4.2-java8-standalone.jar -s scenarios.xml -h -o result-reports/ test-files/good/ubl/*.xml
+java -jar bin/validationtool-1.5.0-standalone.jar -s scenarios.xml -r "" -h -o result-reports/ test-files/good/ubl/*.xml
 ```
 
 Note: eventually you need to explicitly use `"%JAVA_HOME%\bin\java"` on Windows
 
-Validator 1.4.2 help:
+Validator 1.5.0 help:
 
 ```
-usage: check-tool  -s <scenario-config-file> [OPTIONS] [FILE]...
- -?,--help                                 Displays this help
- -c,--check-assertions <assertions-file>   Check the result using defined
-                                           assertions
- -D,--daemon                               Starts a daemon listing for
-                                           validation requests
- -d,--debug                                Prints some more debug
-                                           information
- -G,--disable-gui                          Disables the GUI of the daemon
-                                           mode
- -H,--host <arg>                           The hostname / IP address to
-                                           bind the daemon. Default is
-                                           localhost
- -h,--html                                 Extract and save any html
-                                           content within  result as a
+Usage: KoSIT Validator [-?dX] [-l <logLevel>] [-r repository-path]... -s
+                       scenario.xml [-s scenario.xml]... [[-D] [-H <host>] [-P
+                       <port>] [-T <workerCount>] [-G]] [[-o <outputPath>] [-h]
+                       [--serialize-report-input] [-c assertions-file]
+                       [--report-postfix <reportPostfix>] [--report-prefix
+                       <reportPrefix>] [-m] [-p] <files>...]
+Structural and semantic validation of xml files
+  -?, --help            display this help message
+  -d, --debug           Prints some more debug information
+  -l, --log-level <logLevel>
+                        Enables a certain log level for debugging purposes
+  -r, --repository repository-path
+                        Directory containing scenario content
+  -s, --scenarios scenario.xml
+                        Location of scenarios.xml
+  -X, --debug-logging   Enables full debug log. Alias for -l debug
+Daemon options
+  -D, --daemon          Starts a daemon listing for validation requests
+  -G, --disable-gui     Disables the GUI of the daemon mode
+  -H, --host <host>     The hostname / IP address to bind the daemon.
+                          Default: localhost
+  -P, --port <port>     The port to bind the daemon.
+                          Default: 8080
+  -T, --threads <workerCount>
+                        Number of threads processing validation requests.
+                          Default depends on processor count
+CLI usage options
+      <files>...        Files to validate
+  -c, --check-assertions assertions-file
+                        Check the result using defined assertions
+  -h, --html, --extract-html
+                        Extract and save any html content within result as a
                           separate file
- -l,--log-level <arg>                      Enables a certain log level for
-                                           debugging purposes
   -m, --memory-stats    Prints some memory stats
- -o,--output-directory <arg>               Defines the out directory for
-                                           results. Defaults to cwd
- -P,--port <arg>                           The port to bind the daemon.
-                                           Default is 8080
- -p,--print                                Prints the check result to
-                                           stdout
- -r,--repository <arg>                     Directory containing scenario
-                                           content
-    --report-postfix <arg>                 Postfix of the generated report
-                                           name
-    --report-prefix <arg>                  Prefix of the generated report
-                                           name
- -s,--scenarios <arg>                      Location of scenarios.xml e.g.
- -T,--threads <arg>                        Number of threads processing
-                                           validation requests
- -X,--debug-logging                        Enables full debug log. Alias
-                                           for -l debug
+  -o, --output-directory <outputPath>
+                        Defines the out directory for results.
+  -p, --print           Prints the check result to stdout
+      --report-postfix <reportPostfix>
+                        Postfix of the generated report name
+      --report-prefix <reportPrefix>
+                        Prefix of the generated report name
+      --serialize-report-input
+                        Serializes the report input to the cwd
 ```
 
 ## Building a release
