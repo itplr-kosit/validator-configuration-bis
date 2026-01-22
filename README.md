@@ -13,7 +13,7 @@ This validator uses the latest Peppol BIS 2025-11 rules.
 
 This is the "November 2025" release announced on 2025-11-24.
 
-It is valid per 2026-02-23 00:00 CEST.
+It is valid per 2026-02-23 00:00 CET.
 
 The next Peppol update is foreseen in Q2 2026.
 
