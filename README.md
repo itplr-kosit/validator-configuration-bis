@@ -31,10 +31,7 @@ As a prerequisite you need the KoSIT Validator to run it.
 
 ```shell
 # download validator
-curl -L "https://github.com/itplr-kosit/validator/releases/download/v1.5.0/validator-1.5.0-distribution.zip" --output validator.zip
-
-# unzip the validator (ensure the target directory "bin" is empty before unzipping)
-unzip validator.zip -d bin/
+curl -L "https://github.com/itplr-kosit/validator/releases/download/v1.6.1/validator-1.6.1-standalone.jar" --output bin/validator.jar
 ```
 
 ### Running the validator
@@ -45,12 +42,12 @@ Required tools:
 Verify all examples files (`test-files/good/*.xml`) and produced HTML output to directory `result-reports/` - all of them should be valid:
 
 ```shell
-java -jar bin/validationtool-1.5.0-standalone.jar -s scenarios.xml -r "" -h -o result-reports/ test-files/good/ubl/*.xml
+java -jar bin/validator.jar -s scenarios.xml -r "" -h -o result-reports/ test-files/good/ubl/*.xml
 ```
 
 Note: eventually you need to explicitly use `"%JAVA_HOME%\bin\java"` on Windows
 
-Validator 1.5.0 help:
+Validator 1.6.1 help:
 
 ```
 Usage: KoSIT Validator [-?dX] [-l <logLevel>] [-r repository-path]... -s
