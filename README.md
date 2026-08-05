@@ -9,11 +9,11 @@ Existing issues can be found at [our issue tracker](https://projekte.kosit.org/p
 You can find packaged releases on [our GitLab project](https://projekte.kosit.org/peppol/validator-configuration-bis/-/releases).
 
 
-This validator uses the latest Peppol BIS 2025-11 rules.
+This validator uses the latest Peppol BIS 2026-03 rules.
 
-This is the "November 2025" release announced on 2025-11-24.
+This is the "May 2026" release announced on 2026-05-20.
 
-It is valid per 2026-02-23 00:00 CET.
+It is valid per 2026-08-17 00:00 CEST.
 
 The next Peppol update is foreseen in Q2 2026.
 
@@ -31,7 +31,7 @@ As a prerequisite you need the KoSIT Validator to run it.
 
 ```shell
 # download validator
-curl -L "https://github.com/itplr-kosit/validator/releases/download/v1.6.1/validator-1.6.1-standalone.jar" --output bin/validator.jar
+curl -L "https://github.com/itplr-kosit/validator/releases/download/v1.6.2/validator-1.6.2-standalone.jar" --output bin/validator.jar
 ```
 
 ### Running the validator
@@ -47,7 +47,7 @@ java -jar bin/validator.jar -s scenarios.xml -r "" -h -o result-reports/ test-fi
 
 Note: eventually you need to explicitly use `"%JAVA_HOME%\bin\java"` on Windows
 
-Validator 1.6.1 help:
+Validator 1.6.2 help:
 
 ```
 Usage: KoSIT Validator [-?dX] [-l <logLevel>] [-r repository-path]... -s
@@ -101,5 +101,5 @@ Required tools:
 * zip
 
 ```shell
-zip -r -9 validation-configuration-bis-3.0.20.zip README.md scenarios.xml resources/*
+zip -r -9 validation-configuration-bis-3.0.21.zip README.md scenarios.xml resources/*
 ```
